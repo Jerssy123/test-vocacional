@@ -49,6 +49,9 @@ if (!area || !areas[area]) {
   const datos = areas[area];
   mensaje.innerText = $;{nombre}; perteneces ;al ;área ;de ;{datos.nombre};
   descripcion.innerText = datos.descripcion;
+  // Mostrar imagen según área
+const img = document.getElementById("imagen-area");
+img.src = area + ".jpg"; // informatica.jpg, contabilidad.jpg, etc.
 
   const lista = document.createElement("ul");
   datos.carreras.forEach(carrera => {
