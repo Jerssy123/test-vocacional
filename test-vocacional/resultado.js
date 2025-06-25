@@ -1,6 +1,6 @@
 // resultado.js
 
-const area = localStorage.getItem("resultadoArea");
+const area = localStorage.getItem("areaSeleccionada");
 const nombre = localStorage.getItem("nombreUsuario") || "Estudiante";
 
 const mensaje = document.getElementById("mensaje");
@@ -47,11 +47,20 @@ if (!area || !areas[area]) {
   mensaje.innerText = "¡Ups! No pudimos identificar tu especialidad.";
 } else {
   const datos = areas[area];
-  mensaje.innerText = $;{nombre}; perteneces ;al ;área ;de ;{datos.nombre};
+  mensaje.innerText = {nombre} ;perteneces ;al ;área ;de ;{datos.nombre};
   descripcion.innerText = datos.descripcion;
   // Mostrar imagen según área
-const img = document.getElementById("imagen-area");
-img.src = area + ".jpg"; // informatica.jpg, contabilidad.jpg, etc.
+   const imagenArea = document.getElementById("imagenArea");
+
+    if (area === "informatica") {
+    imagenArea.src = "informatica.jpg";
+    } else if (area === "contabilidad") {
+    imagenArea.src = "contabilidad.jpg";
+    } else if (area === "ciencia") {
+    imagenArea.src = "ciencia.jpg";
+    } else {
+    imagenArea.alt = "No se pudo cargar el área";
+  }
 
   const lista = document.createElement("ul");
   datos.carreras.forEach(carrera => {

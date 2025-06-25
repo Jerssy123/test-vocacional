@@ -66,7 +66,7 @@ function siguientePregunta() {
     respuestas.forEach(area => conteo[area]++);
 
     let resultado = Object.keys(conteo).reduce((a, b) => conteo[a] > conteo[b] ? a : b);
-    localStorage.setItem("resultadoArea", resultado);
+    localStorage.setItem("areaSeleccionada", area); // área puede ser "informatica", "contabilidad" o "ciencia"
     window.location.href = "resultado.html";
   }
 }
